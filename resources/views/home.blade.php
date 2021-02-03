@@ -19,5 +19,12 @@
             </div>
         </div>
     </div>
+    <div>
+        <form method="get" action="" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit">Upload</button>
+
+        </form>
+    </div>
 </div>
 @endsection
