@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('home', function() {
     return view('home');
 });
+
+Route::post('form', function(Request $request){
+    var_dump($request->all);
+});
+Route::post('form', function(Request $request){
+    if ($request->hasFile('profile_picture')){
+        var_dump($request->file('profile_picture'));
+    }
+});
+
+
+Route::get('image-upload', 'ImageUploadController@imageUpaload')->name('image.upload');
+Route::post('image-upload', 'ImageUploadController@imageUploadPost')->name('image.upload.post');

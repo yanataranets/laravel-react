@@ -15,16 +15,15 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                        <form action="{{ route('image.upload.post') }}" enctype="multipart/form-data" method="post">
+                            @csrf
+                            <input type="file" name="file">
+                            <input type="submit">
+                        </form>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <form method="get" action="" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <button type="submit">Upload</button>
 
-        </form>
-    </div>
 </div>
 @endsection
